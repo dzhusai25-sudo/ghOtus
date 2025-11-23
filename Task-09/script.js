@@ -1,35 +1,41 @@
 /*
-1.В переменных a и b хранятся числа. Написать
-программу, которая выводит в консоль произведение
-и сумму этих чисел.
+1.Даны длины трёх сторон треугольника. Определить,
+является ли треугольник прямоугольным.
 */
 
-const a = 2;
-const b = 5;
-console.log(a * b);
-console.log(a + b);
+const ab = 2;
+const bc = 12;
+const ca = 6;
 
-/*
-2.В двух переменных хранятся строки символов.
-Написать программу, которая выведет в консоль
-суммарное количество символов в обоих строках.
-*/
-
-const c = 'Hello';
-const d = 'JavaScript';
-console.log(c.length + d.length);
-
-/*
-3.*Написать программу, которая запрашивает у
-пользователя ввод трёхзначного числа, а потом
-выводит в консоль сумму цифр введённого числа.
-*/
-
-const Str = prompt('Enter your 3 digit number');
-const input = Number(Str);
-if (Str.length === 3 && input >= 100 && input <= 999) {
-    const arr = Str.split('');
-    console.log(Number(arr[0]) + Number(arr[1]) + Number(arr[2]));
+function isRightTriangle(a,b,c) {
+    const arr = [a, b, c];
+    const sides = arr.sort((a, b) => b - a);
+    return sides[0]*sides[0] === sides[1]*sides[1] + sides[2]* sides[2];
 }
-else
-    alert('bad value');
+
+isRightTriangle(ab,bc,ca);
+
+/*
+2.Пользователь вводит число R. Написать программу,
+которая выведет в консоль длину окружности и
+площадь круга с радиусом R.
+*/
+
+const R = +prompt('Enter Radius');
+console.log(2 * Math.PI * R);
+console.log(Math.PI * R * R);
+
+/*
+*Пользователь вводит числа a, b и c. Написать
+программу, выводящую корни квадратного
+уравнения с коэффициентами a, b и c.
+*/
+
+const a = +prompt('a: ');
+const b = +prompt('b: ');
+const c = +prompt('c: ');
+
+const D = b * b - 4 * a * c;
+    const x1 = ( -b + Math.sqrt(D) ) / (2 * a);
+    const x2 = ( -b - Math.sqrt(D) ) / (2 * a);
+    console.log(x1, x2);

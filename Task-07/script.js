@@ -1,35 +1,31 @@
-/*
-1.В переменных a и b хранятся числа. Написать
-программу, которая выводит в консоль произведение
-и сумму этих чисел.
-*/
+//Сверстать страницу и подключить к ней файл со скриптом. На странице должны быть три текстовых параграфа, поле ввода и кнопка. 
+// Напишите скрипт, который будет выполнять следующие условия:
 
-const a = 2;
-const b = 5;
-console.log(a * b);
-console.log(a + b);
+const input = document.querySelector('[type="text"]');
+const button = document.querySelector('.button');
+const paragraphs = document.querySelector('.paragraphs');
 
-/*
-2.В двух переменных хранятся строки символов.
-Написать программу, которая выведет в консоль
-суммарное количество символов в обоих строках.
-*/
+//1.Кнопка скрыта, если в поле ввода нет значения.
 
-const c = 'Hello';
-const d = 'JavaScript';
-console.log(c.length + d.length);
-
-/*
-3.*Написать программу, которая запрашивает у
-пользователя ввод трёхзначного числа, а потом
-выводит в консоль сумму цифр введённого числа.
-*/
-
-const Str = prompt('Enter your 3 digit number');
-const input = Number(Str);
-if (Str.length === 3 && input >= 100 && input <= 999) {
-    const arr = Str.split('');
-    console.log(Number(arr[0]) + Number(arr[1]) + Number(arr[2]));
+function changeButtonVisibility() {
+    button.hidden = input.value.length < 1;
 }
-else
-    alert('bad value');
+input.addEventListener('keyup', changeButtonVisibility);
+
+//2.При клике на кнопку добавляется новый параграф, содержащий текст из поля ввода.
+
+function addParagraphs() {
+    const newP = document.createElement('p');
+    newP.innerText = input.value;
+    paragraphs.append(newP)
+
+//3.*Если параграфов становится больше 5, первый из них удаляется.
+
+    if (paragraphs.childElementCount > 5) 
+        paragraphs.firstElementChild.remove();
+
+    input.value = '';
+    button.hidden = true;
+}
+
+button.addEventListener('click', addParagraphs);

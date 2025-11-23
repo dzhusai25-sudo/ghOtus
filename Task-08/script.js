@@ -1,35 +1,47 @@
 /*
-1.В переменных a и b хранятся числа. Написать
-программу, которая выводит в консоль произведение
-и сумму этих чисел.
+1.Запросите у пользователя дату в формате
+ДД.ММ.ГГГГ. Напишите программу, выводящую день
+недели по введённой дате.
 */
 
-const a = 2;
-const b = 5;
-console.log(a * b);
-console.log(a + b);
+const dateString = prompt('Enter your date dd.mm.yyyy: ')
+const [day, month, year] = dateString.split('.');
+const dayNumberOfWeek = new Date(`${year}-${month}-${day}`).getDay();
+const daysNamesOfWeek = [
+  'воскресенье',
+  'понедельник',
+  'вторник',
+  'среда',
+  'четверг',
+  'пятница',
+  'суббота'
+];
+
+console.log(daysNamesOfWeek[dayNumberOfWeek]);
 
 /*
-2.В двух переменных хранятся строки символов.
-Написать программу, которая выведет в консоль
-суммарное количество символов в обоих строках.
+2.Написать программу, которая выводит в консоль
+количество минут, прошедшее с начала сегодняшнего
+дня.
 */
 
-const c = 'Hello';
-const d = 'JavaScript';
-console.log(c.length + d.length);
+const Hours = new Date(Date.now()).getHours();
+const Minutes = new Date(Date.now()).getMinutes();
+console.log(Hours * 60 + Minutes);
 
 /*
-3.*Написать программу, которая запрашивает у
-пользователя ввод трёхзначного числа, а потом
-выводит в консоль сумму цифр введённого числа.
+3.*В двух переменных хранятся даты рождения двух
+пользователей в формате ДД.ММ.ГГГГ. Написать
+программу, которая определяет более молодого
+пользователя.
 */
 
-const Str = prompt('Enter your 3 digit number');
-const input = Number(Str);
-if (Str.length === 3 && input >= 100 && input <= 999) {
-    const arr = Str.split('');
-    console.log(Number(arr[0]) + Number(arr[1]) + Number(arr[2]));
+const user1 = {name: 'Alex', age: '10.09.1993'};
+const user2 = {name: 'Dmitry', age: '15.01.1993'};
+
+function strToDate(dateString) {
+   const [day, month, year] = dateString.split('.');
+   return new Date(`${year}-${month}-${day}`)
 }
-else
-    alert('bad value');
+
+console.log(strToDate(user1.age) > strToDate(user2.age)? user1 : user2);

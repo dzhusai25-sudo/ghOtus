@@ -1,35 +1,38 @@
 /*
-1.В переменных a и b хранятся числа. Написать
-программу, которая выводит в консоль произведение
-и сумму этих чисел.
+1.Вывести в консоль сумму всех целых чисел от 50 до
+100.
 */
-
-const a = 2;
-const b = 5;
-console.log(a * b);
-console.log(a + b);
-
-/*
-2.В двух переменных хранятся строки символов.
-Написать программу, которая выведет в консоль
-суммарное количество символов в обоих строках.
-*/
-
-const c = 'Hello';
-const d = 'JavaScript';
-console.log(c.length + d.length);
-
-/*
-3.*Написать программу, которая запрашивает у
-пользователя ввод трёхзначного числа, а потом
-выводит в консоль сумму цифр введённого числа.
-*/
-
-const Str = prompt('Enter your 3 digit number');
-const input = Number(Str);
-if (Str.length === 3 && input >= 100 && input <= 999) {
-    const arr = Str.split('');
-    console.log(Number(arr[0]) + Number(arr[1]) + Number(arr[2]));
+let sum = 0;
+for (let i = 50; i <= 100; i++) {
+    sum += i;
 }
-else
-    alert('bad value');
+
+console.log(sum);
+
+/*
+2.Вывести в консоль таблицу умножения на 7.
+7 x 1 = 7
+7 x 2 = 14
+…
+7 x 9 = 63
+*/
+
+const factor = 7;
+for (let i = 1; i <= 9; i++) {
+    console.log(`${factor} x ${i} = ${factor * i}`)
+}
+
+/*
+*Запросить у пользователя ввод числа N. Вывести в
+консоль среднее арифметическое всех нечётных
+чисел от 1 до N.
+*/
+
+const input = +prompt('Enter your number');
+let summa = 0;
+let count = 0;
+for (let i = 1; i <= input; i = i + 2) {
+    summa += i;
+    count ++;
+}
+console.log(summa / count);

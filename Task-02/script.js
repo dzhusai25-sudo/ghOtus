@@ -1,35 +1,52 @@
 /*
-1.В переменных a и b хранятся числа. Написать
-программу, которая выводит в консоль произведение
-и сумму этих чисел.
+1.В переменных a и b хранятся числа. Вывести в
+консоль наибольшее из них.
 */
 
-const a = 2;
-const b = 5;
-console.log(a * b);
-console.log(a + b);
-
-/*
-2.В двух переменных хранятся строки символов.
-Написать программу, которая выведет в консоль
-суммарное количество символов в обоих строках.
-*/
-
-const c = 'Hello';
-const d = 'JavaScript';
-console.log(c.length + d.length);
-
-/*
-3.*Написать программу, которая запрашивает у
-пользователя ввод трёхзначного числа, а потом
-выводит в консоль сумму цифр введённого числа.
-*/
-
-const Str = prompt('Enter your 3 digit number');
-const input = Number(Str);
-if (Str.length === 3 && input >= 100 && input <= 999) {
-    const arr = Str.split('');
-    console.log(Number(arr[0]) + Number(arr[1]) + Number(arr[2]));
+const a = 25;
+const b = 77;
+if (a > b) {
+    console.log(a);
 }
-else
-    alert('bad value');
+else {
+    console.log(b);
+}
+
+/*
+2.Запросить у пользователя ввод числа от 1 до 12.
+Вывести в консоль название месяца, соответствующее
+этому числу (1 — январь, 2 — февраль и т.д.).
+*/
+
+const input = +prompt('Enter a month number: ');
+let monthName = '';
+switch (input) {
+    case 1:  monthName = 'January';  break;
+    case 2:  monthName = 'February'; break;
+    case 3:  monthName = 'March';    break;
+    case 4:  monthName = 'April';    break;
+    case 5:  monthName = 'May';      break;
+    case 6:  monthName = 'June';     break;
+    case 7:  monthName = 'July';     break;
+    case 8:  monthName = 'August';   break;
+    case 9:  monthName = 'September'; break;
+    case 10: monthName = 'October';  break;
+    case 11: monthName = 'November';  break;
+    case 12: monthName = 'December'; break;
+    default: monthName = 'Invalid number. Please enter a number from 1 to 12.';
+}
+console.log(monthName);
+
+/*
+*В переменных circle и square хранятся площади круга
+и квадрата соответственно. Написать программу,
+которая определяет, поместится ли круг в квадрат.
+*/
+
+const circle = 100;
+const square = 20;
+
+const diameter = 2 * Math.sqrt(circle / Math.PI);
+const side = Math.sqrt(square);
+
+diameter <= side? console.log('Круг поместится в квадрат') : console.log('Круг не поместится в квадрат');
