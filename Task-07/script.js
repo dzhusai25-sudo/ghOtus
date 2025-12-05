@@ -8,9 +8,9 @@ const paragraphs = document.querySelector('.paragraphs');
 //1.Кнопка скрыта, если в поле ввода нет значения.
 
 function changeButtonVisibility() {
-    button.hidden = input.value.length < 1;
+    button.hidden = !input.value.length;
 }
-input.addEventListener('keyup', changeButtonVisibility);
+input.addEventListener('input', changeButtonVisibility);
 
 //2.При клике на кнопку добавляется новый параграф, содержащий текст из поля ввода.
 
