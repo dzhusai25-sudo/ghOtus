@@ -10,9 +10,9 @@ const paragraphs = document.querySelector('.paragraphs');
 const input = document.querySelector('.input');
 const button = document.querySelector('.button');
 
-function changeButtonVisibility() {button.hidden = !input.value.length}
+ function changeButtonVisibility() {button.hidden = !input.value.length}
 
-function addParagraphs() {
+ function addParagraphs() {
     const newP = document.createElement('p');
     newP.innerText = input.value;
     paragraphs.append(newP)
