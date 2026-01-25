@@ -9,9 +9,9 @@ const paragraphs = document.querySelector('.paragraphs');
 const input = document.querySelector('.input');
 const button = document.querySelector('.button');
 
-export function changeButtonVisibility() {button.hidden = !input.value.length}
+function changeButtonVisibility() {button.hidden = !input.value.length}
 
-export function addParagraphs() {
+function addParagraphs() {
     const newP = document.createElement('p');
     newP.innerText = input.value;
     paragraphs.append(newP)
@@ -35,15 +35,15 @@ export function pApp(el) {
     <button class="button" hidden="true">Добавить параграф</button>
     `;
 
-        const paragraphs = document.querySelector('.paragraphs');
-        const input = document.querySelector('.input');
-        const button = document.querySelector('.button');
+        const paragraphs = el.querySelector('.paragraphs');
+        const input = el.querySelector('.input');
+        const button = el.querySelector('.button');
 
 function changeButtonVisibility() {button.hidden = !input.value.length}
 
 function addParagraphs() {
     const newP = document.createElement('p');
-    newP.innerText = input.value;
+    newP.innerHTML = input.value;
     paragraphs.append(newP)
     if (paragraphs.childElementCount > 5) paragraphs.firstElementChild.remove();
     input.value = '';
