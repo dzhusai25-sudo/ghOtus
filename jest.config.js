@@ -202,5 +202,9 @@ module.exports = config;
 // jest.config.js
 module.exports = {
   testEnvironment: 'jsdom',
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['html', 'text'],
+  collectCoverageFrom: ['Task-07/src/*.js']
   // Другие настройки (например, coverage, globals)
 };
