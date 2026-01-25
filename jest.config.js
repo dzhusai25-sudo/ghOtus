@@ -42,6 +42,15 @@ const config = {
   //   "clover"
   // ],
 
+
+   coverageThreshold: {
+    global: {
+      branches: 60,
+      functions: 60,
+      lines: 60,
+    },
+  },
+
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
 
@@ -205,6 +214,10 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageReporters: ['html', 'text'],
-  collectCoverageFrom: ['Task-07/src/*.js']
+  collectCoverageFrom: [
+    'Task-07/src/*.js',
+    '!Task-07/src/index.js',
+
+  ]
   // Другие настройки (например, coverage, globals)
 };
