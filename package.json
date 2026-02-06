@@ -9,7 +9,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "Task**/**/*.js": "eslint"
+    "Task**/**/*.js": ["eslint", "prettier --write"]
   },
   "repository": {
     "type": "git",
