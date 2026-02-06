@@ -39,6 +39,6 @@
     "stylelint": "^17.0.0"
   },
   "lint-staged": {
-    "HomeWorks**/**/*.js": "eslint"
+    "Task**/**/*.js": "eslint"
   }
 }
