@@ -25,7 +25,7 @@ button.addEventListener('click', addParagraphs);
 */
 
 export function pApp(el) {
-    el.innerHTML = `
+  el.innerHTML = `
     <div class="paragraphs">
         <p>Текст параграфа 1</p>
         <p>Текст параграфа 2</p>
@@ -35,20 +35,23 @@ export function pApp(el) {
     <button class="button" hidden="true">Добавить параграф</button>
     `;
 
-        const paragraphs = el.querySelector('.paragraphs')
-        const input = el.querySelector('.input')
-        const button = el.querySelector('.button')
+  const paragraphs = el.querySelector('.paragraphs');
+  const input = el.querySelector('.input');
+  const button = el.querySelector('.button');
 
-function changeButtonVisibility() {button.hidden = !input.value.length}
+  function changeButtonVisibility() {
+    button.hidden = !input.value.length;
+  }
 
-function addParagraphs() {
+  function addParagraphs() {
     const newP = document.createElement('p');
     newP.innerHTML = input.value;
-    paragraphs.append(newP)
+    paragraphs.append(newP);
     if (paragraphs.childElementCount > 5) paragraphs.firstElementChild.remove();
     input.value = '';
-    button.hidden = true}
+    button.hidden = true;
+  }
 
-input.addEventListener('input', changeButtonVisibility);
-button.addEventListener('click', addParagraphs);
+  input.addEventListener('input', changeButtonVisibility);
+  button.addEventListener('click', addParagraphs);
 }
