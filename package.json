@@ -8,6 +8,9 @@
     "lint": "eslint",
     "prepare": "husky"
   },
+    "lint-staged": {
+    "Task**/**/*.js": "eslint"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dzhusai25-sudo/ghOtus.git"
@@ -37,8 +40,5 @@
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
     "stylelint": "^17.0.0"
-  },
-  "lint-staged": {
-    "Task**/**/*.js": "eslint"
   }
 }
