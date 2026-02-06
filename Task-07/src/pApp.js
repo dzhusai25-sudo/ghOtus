@@ -32,7 +32,7 @@ export function pApp(el) {
         <p>Текст параграфа 3</p>
     </div>
     <input class='input' type="text">
-    <button class="button" hidden="true">Добавить параграф</button>
+    <button class="button" hidden="true">Добwwавить параграф</button>
     `;
 
   const paragraphs = el.querySelector('.paragraphs');
