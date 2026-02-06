@@ -2,6 +2,8 @@ import js from "@eslint/js";
 import globals from "globals";
 import { defineConfig } from "eslint/config";
 import jest from 'eslint-plugin-jest';
+import prettier from 'eslint-config-prettier';
+
 
 export default defineConfig([
   { 
@@ -16,6 +18,7 @@ export default defineConfig([
     extends: ["js/recommended"], 
     languageOptions: { globals: {...globals.browser, ...globals.node} } 
   },
+  prettier,
   {
     files: ["Task*/**/*.test.js"],
     ...jest.configs['flat/recommended'],
